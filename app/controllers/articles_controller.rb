@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate, except: [:index, :show]
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: [:show]
 
   # GET /articles or /articles.json
   def index
@@ -18,11 +18,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @article = current_user.articles.find(params[:id])
   end
 
   # POST /articles or /articles.json
   def create
-    @article = current_user.articles.new(article_params)
+    @article = current_user.articles.new(article_params) 
 
     respond_to do |format|
       if @article.save
