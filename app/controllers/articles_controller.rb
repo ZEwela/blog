@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
 
     respond_to do |format|
       if @article.save
@@ -50,6 +50,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
+    @article = current_user.articles.find(params[:id])
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
