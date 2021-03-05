@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = current_user.articles.new(article_params) 
+    @article = current_user.articles.new(article_params)
 
     respond_to do |format|
       if @article.save
@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
+    @article = current_user.articles.find(params[:id])
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: "Article was successfully updated." }
@@ -67,6 +68,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :location, :excerpt, :body, :published_at, category_ids: [])
+      params.require(:article).permit(:title, :cover_image, :remove_cover_image, :location, :excerpt, :body, :published_at, category_ids: [])
     end
 end
