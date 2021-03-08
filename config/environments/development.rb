@@ -42,7 +42,7 @@ Rails.application.configure do
     enable_starttls_auto: true,
     port: 587,
     authentication: :plain,
-    user_name: Rails.application.credentials.smpt[:user_name],
+    user_name: Rails.application.credentials.smtp[:user_name],
     pasword: Rails.application.credentials.smtp[:password],
   }
 
