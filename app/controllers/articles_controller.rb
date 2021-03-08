@@ -62,7 +62,7 @@ class ArticlesController < ApplicationController
 
   def notify_friend
     NotifierMailer.email_friend(@article, params[:name], params[:email]).deliver
-    redirect_to @article, notice: 'Successfully sent a message to your fiernd'
+    redirect_to @article, notice: 'Successfully sent a message to your friend'
   end
 
   private

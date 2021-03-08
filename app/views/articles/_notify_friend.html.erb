@@ -4,11 +4,11 @@
     <%= form.text_field :name %>
   </div>
   <div class="field">
-    <%= form.label :email, "Your fiernd's email" %>
+    <%= form.label :email, "Your friend's email" %>
     <%= form.text_field :email %>
   </div>
   <div class="actions">
-    <%= form.submit 'Send' %> or 
+    <%= form.submit 'Send' %> or
     <%= link_to 'Cancel', '#', onclick: "document.querySelector('#notify_friend').style.display='none', return false;" %>
   </div>
 <% end %>
