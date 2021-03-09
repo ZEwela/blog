@@ -7,8 +7,8 @@ class DraftArticlesMailbox < ApplicationMailbox
       body: mail.body,
     )
 
-  DraftArticlesMailer.created(mail.from, article).deliver
-end 
+  DraftArticlesMailer.created(mail.from, article).deliver_later
+end
 
   private
 
