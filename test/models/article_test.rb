@@ -21,4 +21,10 @@ class ArticleTest < ActiveSupport::TestCase
     article.update(title: 'New Title')
     assert_equal 'New Title', article.reload.title
   end
+
+  test 'should destroy article' do
+    article = articles(:welcome_to_rails)
+    article.destroy
+    assert_raise(ActiveRecord::RecordNotFound) { Article.find(article.id)}
+  end
 end
