@@ -2,7 +2,6 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("ArticlesChannel", {
   received(data) {
-    console.log('receiveddd')
     if (data.new_article) {
       this.displayNewArticleNotification(data.new_article);
     }
