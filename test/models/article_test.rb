@@ -15,4 +15,10 @@ class ArticleTest < ActiveSupport::TestCase
     article_id = articles(:welcome_to_rails).id
     assert_nothing_raised { Article.find(article_id) }
   end
+
+  test ' should update article' do
+    article = articles(:welcome_to_rails)
+    article.update(title: 'New Title')
+    assert_equal 'New Title', article.reload.title
+  end
 end
