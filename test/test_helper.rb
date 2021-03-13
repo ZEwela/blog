@@ -14,5 +14,5 @@ class ActiveSupport::TestCase
 
   def login_as(user)
     post session_url(email: users(user).email, password: 'secret')
-  end  
+  end
 end

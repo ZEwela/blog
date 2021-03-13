@@ -2,8 +2,8 @@
 
 eugene:
   email: eugene@gmail.com
-  hashed_password: jfhfjfj7ejfdbfjf73947593hfhfksiuwjwmeloiu # => secret
+  hashed_password: e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4 # => secret
 
 lauren:
   email: lauren@gmail.com
-  hashed_password: jfhfjfj7ejfdbfjf73947593hfhfksiuwjwmeloiu # => secret
+  hashed_password: e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4 # => secret
